@@ -1,0 +1,11 @@
+#ifndef HYDROGEN_SRC_BASIC_MODULEMANAGER
+#define HYDROGEN_SRC_BASIC_MODULEMANAGER
+// #include "clang/Basic/FileManager.h"
+// HYDROGEN_BEGIN_NAMESPACE
+// class ModuleManager
+// {
+// };
+// HYDROGEN_END_NAMESPACE
+
+
+#endif /* HYDROGEN_SRC_BASIC_MODULEMANAGER */

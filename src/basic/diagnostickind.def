@@ -1,0 +1,157 @@
+#ifndef HYDROGEN_DIAGNOSTIC_KIND
+#define HYDROGEN_DIAGNOSTIC_KIND(NAME, LEVEL, DESC)
+#endif
+// ============================================================================
+// Lexer diagnostics
+// ============================================================================
+
+HYDROGEN_DIAGNOSTIC_KIND(SyntaxError,Error,"syntax error")
+HYDROGEN_DIAGNOSTIC_KIND(UnterminatedString, Error, "unterminated string literal ")
+HYDROGEN_DIAGNOSTIC_KIND(UnterminatedRawString, Error, "unterminated triple-quoted string literal ")
+HYDROGEN_DIAGNOSTIC_KIND(UnterminatedBytes, Error, "unterminated bytes literal ")
+HYDROGEN_DIAGNOSTIC_KIND(UnterminatedRawBytes, Error, "unterminated triple-quoted bytes literal ")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidLeadingZero,Error,"leading zero not permitted")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidIndent,Error,"indent error")
+HYDROGEN_DIAGNOSTIC_KIND(UnmatchedDedent,Error,"unmatched dedent error")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidCharacterInNumericLiteral,Error,"invalid character in numeric literal")
+HYDROGEN_DIAGNOSTIC_KIND(NestedFormatString,Error,"multiple level formatted string is not supported")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidModulePath,Error,"not found module ")
+
+// ============================================================================
+// Parser diagnostics
+// ============================================================================
+
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedIndent, Error, "expected indentation")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedDedent, Error, "expected dedentation")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedExpression, Error, "expected a expression")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedReturnValue, Error, "expected a return value")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedTopLevelDecl, Error, "expected a declaration(statements or expressions are not allowed)")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedFunctionName, Error, "expected a function name after keyword \"def\"")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedClassName, Error, "expected a class name after keyword \"class\"")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedVariableName, Error, "expected a class name after keyword \"class\"")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedParameterName, Error, "expected a class name after keyword \"class\"")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedFunctionParams, Error, "expected parameters on function definition")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedCloseParen, Error, "'(' was never closed")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedCloseSquare, Error, "'[' was never closed")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedCloseBrace, Error, "'{' was never closed")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedCloseFormatSpecifier, Error, "format specifier '{' was never closed")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedIn, Error, "expected keyword \"in\" on for statement")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedColon, Error, "expected \":\"")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedExcept, Error, "expected keyword \"except\" on try statement")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedFunctionBody, Error, "expected an indented block after function definition")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedClassBody, Error, "expected an indented block after class definition")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedForBody, Error, "expected an indented block after 'for' statement")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedWhileBody, Error, "expected an indented block after 'while' statement")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedIfBody, Error, "expected an indented block after 'if' statement")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedElseBody, Error, "expected an indented block after 'else' statement")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedElifBody, Error, "expected an indented block after 'elif' statement")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedTryBody, Error, "expected an indented block after 'try' statement")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedExceptBody, Error, "expected an indented block after 'except' statement")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedFinallyBody, Error, "expected an indented block after 'finally' statement")
+
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedIdentifier, Error, "expected an identifier")
+
+HYDROGEN_DIAGNOSTIC_KIND(UndeclaredIdentifier, Error, "this identifier is not declared")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedEqual, Error, "expected an equal sign")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedOpenParen, Error, "expected an '('")
+HYDROGEN_DIAGNOSTIC_KIND(UnrecognizedDeclaration, Error, "this name is not defined")
+HYDROGEN_DIAGNOSTIC_KIND(UndefinedReservedWord, Error, "this is a reserved word but not defined yet")
+HYDROGEN_DIAGNOSTIC_KIND(UndefinedReservedSymbol, Error, "this is a reserved symbol but not defined yet")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedDecoratingDecl, Error, "expected def or class after decorator")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedFrom, Error, "expected from")
+// ============================================================================
+// Semantics diagnostics
+// ============================================================================
+
+
+
+HYDROGEN_DIAGNOSTIC_KIND(InvalidSetAttr, Error, "invalid set attr")
+
+
+HYDROGEN_DIAGNOSTIC_KIND(InvalidGetAttr, Error, "invalid get attr")
+
+
+HYDROGEN_DIAGNOSTIC_KIND(InvalidCall, Error, "invalid call")
+
+HYDROGEN_DIAGNOSTIC_KIND(UnresolvedCall, Error, "unresolved call")
+HYDROGEN_DIAGNOSTIC_KIND(FutureSyntax, Error, "this syntax is not supported yet")
+HYDROGEN_DIAGNOSTIC_KIND(UnsupportedDecorator, Error, "decorator is not supported yet")
+HYDROGEN_DIAGNOSTIC_KIND(UnsupportedKwargs, Error, "kwarg is not supported yet")
+
+HYDROGEN_DIAGNOSTIC_KIND(AmbiguousCall, Error, "ambiguous call")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedCallable, Error, "expected a callable")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedClassScope, Error, "expected a class scope")
+HYDROGEN_DIAGNOSTIC_KIND(ImportError, Error, "import error")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedModule, Error, "expected a module")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedModuleName, Error, "expected a module name ")
+HYDROGEN_DIAGNOSTIC_KIND(NotImplementedSyntax, Error, "this syntax is not supported yet")
+HYDROGEN_DIAGNOSTIC_KIND(DynamicAnnotationTypeIsNotSupported, Error, "dynamic annotated type is not supported in here (it will be supported in future)")
+HYDROGEN_DIAGNOSTIC_KIND(MultipleTypeAnnotationIsNotSupported, Error, "multiple type annotation is not supported")
+HYDROGEN_DIAGNOSTIC_KIND(MultipleInheritanceIsNotSupported, Error, "multiple inheritance is not supported except to abstract class")
+HYDROGEN_DIAGNOSTIC_KIND(AssignmentToNonVariableIsNotSupported, Error, "cannot assign to module, class or function")
+HYDROGEN_DIAGNOSTIC_KIND(AssignmentToNonMemberIsNotSupported, Error, "cannot assign to non-member")
+HYDROGEN_DIAGNOSTIC_KIND(TemplateParamsAreNotSupportedHere, Error, "template parameters are not supported here")
+HYDROGEN_DIAGNOSTIC_KIND(StmtNotSupportedHere, Error, "statement is not supported in module or class definition")
+HYDROGEN_DIAGNOSTIC_KIND(ExprNotSupportedHere, Error, "expression is not supported in module or class definition")
+HYDROGEN_DIAGNOSTIC_KIND(FunctionReassignmentIsNotSupported, Error, "function is not re-assignable")
+HYDROGEN_DIAGNOSTIC_KIND(ClassReassignmentIsNotSupported, Error, "class is not re-assignable")
+HYDROGEN_DIAGNOSTIC_KIND(UnsupportedBaseClass,Error,"unsupported super class")
+HYDROGEN_DIAGNOSTIC_KIND(MethodMustBeInClass,Error,"method must be in class")
+HYDROGEN_DIAGNOSTIC_KIND(TypeAnnotationIsRequired,Error,"type annotation is required")
+HYDROGEN_DIAGNOSTIC_KIND(RedeclarationOfVariable,Error,"redeclaration of variable")
+HYDROGEN_DIAGNOSTIC_KIND(RedeclarationWithDifferentType,Error,"redeclaration with different type")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidTemplateSpecification,Error,"only class and function allow template specification")
+HYDROGEN_DIAGNOSTIC_KIND(AmbiguousAttribute,Error,"Ambiguous Attribute")
+HYDROGEN_DIAGNOSTIC_KIND(IncompatibleTypes,Error,"IncompatibleTypes")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidRealLiteral,Error,"invalid real literal")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidIntegerLiteral,Error,"invalid integer literal")
+HYDROGEN_DIAGNOSTIC_KIND(NoBuiltinInt,Warring,"no builtin integer type")
+HYDROGEN_DIAGNOSTIC_KIND(NoBuiltinFloat,Warring,"no builtin float type")
+HYDROGEN_DIAGNOSTIC_KIND(NoBuiltinBool,Warring,"no builtin bool type")
+HYDROGEN_DIAGNOSTIC_KIND(NoBuiltinString,Warring,"no builtin string type")
+HYDROGEN_DIAGNOSTIC_KIND(NoBuiltinTuple,Warring,"no builtin tuple type")
+HYDROGEN_DIAGNOSTIC_KIND(NoBuiltinList,Warring,"no builtin list type")
+HYDROGEN_DIAGNOSTIC_KIND(NoBuiltinDict,Warring,"no builtin dict type")
+HYDROGEN_DIAGNOSTIC_KIND(NoBuiltinSet,Warring,"no builtin set type")
+HYDROGEN_DIAGNOSTIC_KIND(NoBuiltinRange,Warring,"no builtin range type")
+
+
+HYDROGEN_DIAGNOSTIC_KIND(NoBuiltinBytes,Warring,"no builtin bytes type")
+HYDROGEN_DIAGNOSTIC_KIND(NoBuiltinByteArray,Warring,"no builtin bytearray type")
+
+
+HYDROGEN_DIAGNOSTIC_KIND(NoDefaultUnsignedInt,Warring,"no default unsigned integer type")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedNonLocalVariable,Error,"expected non-local variable")
+HYDROGEN_DIAGNOSTIC_KIND(ExpectedNoSelfType,Error,"self type is not allowed here")
+HYDROGEN_DIAGNOSTIC_KIND(UndeclareMember,Error,"undeclared member")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidTemplateSpecialization,Error,"invalid template specialization")
+HYDROGEN_DIAGNOSTIC_KIND(FloatPrecisionLoss,Warring,"float precision loss")
+HYDROGEN_DIAGNOSTIC_KIND(FloatDivisionByZero,Error,"float division by zero")
+HYDROGEN_DIAGNOSTIC_KIND(FloatOverflow,Error,"float overflow")
+HYDROGEN_DIAGNOSTIC_KIND(FloatUnderflow,Error,"float underflow")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidRealLiteral,Error,"invalid real literal")
+HYDROGEN_DIAGNOSTIC_KIND(ReservedName,Error,"reserved name")
+HYDROGEN_DIAGNOSTIC_KIND(FloatInvalidOperation,Error,"reserved name")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidBinaryOperator,Error,"invalid binary operator")
+
+HYDROGEN_DIAGNOSTIC_KIND(RaiseOutsideExcept,Error,"raise outside except")
+HYDROGEN_DIAGNOSTIC_KIND(BreakOutsideLoop,Error,"break outside loop")
+HYDROGEN_DIAGNOSTIC_KIND(BreakOutsideLoop,Error,"Continue outside loop")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidMatchType,Error,"match statement is not supported for this type. expected comparable type")
+HYDROGEN_DIAGNOSTIC_KIND(Redeclaration,Error,"redeclaration")
+
+HYDROGEN_DIAGNOSTIC_KIND(RequireTemplateSpecialization,Error,"require template specialization")
+HYDROGEN_DIAGNOSTIC_KIND(InvalidTypeHint,Error,"invalid type hint")
+HYDROGEN_DIAGNOSTIC_KIND(RequireSingleFunction,Error,"require single function")
+HYDROGEN_DIAGNOSTIC_KIND(FirstParameterTypeMustBeEmpty,Error,"first parameter type must be empty")
+
+
+
+
+
+
+
+
+
+#undef HYDROGEN_DIAGNOSTIC_KIND
+

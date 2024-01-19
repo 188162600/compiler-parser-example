@@ -1,0 +1,12 @@
+#ifndef HYDROGEN_UNARY_OPERATOR_KIND
+#define HYDROGEN_UNARY_OPERATOR_KIND(NAME, SEMANTIC_KIND, TOKEN_KIND, CAN_OVERFLOW, /*clang::UnaryOperatorKind*/...)
+#endif
+
+HYDROGEN_UNARY_OPERATOR_KIND(UnaryStarStar, SemanticKind::UnaryStarStarExpr, TokenKind::StarStar,false)
+HYDROGEN_UNARY_OPERATOR_KIND(UnaryStar, SemanticKind::UnaryStarExpr, TokenKind::Star,false)
+HYDROGEN_UNARY_OPERATOR_KIND(UnaryAdd, SemanticKind::UnaryPlusExpr, TokenKind::Plus, false, clang::UO_Plus)
+HYDROGEN_UNARY_OPERATOR_KIND(UnarySub, SemanticKind::UnarySubExpr, TokenKind::Minus, true, clang::UO_Minus)
+HYDROGEN_UNARY_OPERATOR_KIND(UnaryNot, SemanticKind::UnaryNotExpr, TokenKind::Exclaim, false, clang::UO_LNot)
+HYDROGEN_UNARY_OPERATOR_KIND(UnaryInvert, SemanticKind::UnaryInvertExpr, TokenKind::Tilde, false, clang::UO_Not)
+
+#undef HYDROGEN_BINARY_OPERATOR_KIND

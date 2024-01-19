@@ -1,0 +1,14 @@
+#ifndef HYDROGEN_SRC_BASIC_BUILTINMETHODKIND
+#define HYDROGEN_SRC_BASIC_BUILTINMETHODKIND
+#include"src/basic/global.h"
+HYDROGEN_BEGIN_NAMESPACE
+enum BuiltinMethodKind
+{
+    #define HYDROGEN_BUILTIN_METHOD(NAME) NAME,
+    #include"src/ast/builtinmethodkind.def"
+    
+};
+
+HYDROGEN_END_NAMESPACE
+
+#endif /* HYDROGEN_SRC_BASIC_BUILTINMETHODKIND */

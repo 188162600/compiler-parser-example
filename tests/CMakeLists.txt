@@ -1,0 +1,5 @@
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lexer)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/sema)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/parser)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/testingtools)
+#add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/example)
